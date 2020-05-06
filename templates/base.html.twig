@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}Booking!{% endblock %}</title>
+        <link rel="stylesheet" href="/css/bootstrap.min.css">
+        <link rel="stylesheet" href="/css/app.css">
+        {% block stylesheets %}{% endblock %}
+        <script src="/js/jquery.min.js"></script>
+    </head>
+    <body>
+        {% include 'inc/header.html.twig' %}
+       
+        {% for label, messages in app.flashes %}
+            <div class="container">
+                <div class="alert alert-{{label}}">
+                    {% for message in messages %}
+                    <p> {{ message | raw }} </p>
+                    {% endfor %}
+                </div>
+            </div>
+        {% endfor %}
+
+
+
+
+        {% block body %}{% endblock %}
+        {% block javascripts %}{% endblock %}
+        {% include 'inc/footer.html.twig' %}
+    </body>
+</html>

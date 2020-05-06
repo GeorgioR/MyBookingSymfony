@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} Accès non autorisé- Erreur 403 {% endblock %}
+
+{% block body %}
+<div class="container">
+<h1> L'accès n'est pas autorisé </h1>
+
+<p class="h4 alert alert-danger"> Accès interdit! Merci de revenir à  <a href="{{path('homepage')}}">la page d'accueil</a>. </p>
+
+<a href="{{path('homepage')}}" class="btn btn-primary">la page d'accueil</a>
+<a href="{{path('ads_list')}}" class="btn btn-secondary">nos annonces</a>
+</div>
+
+
+{% endblock %}

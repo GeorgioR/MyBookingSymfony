@@ -1,0 +1,19 @@
+{% extends 'base.html.twig' %}
+{% block title %} Modification de votre annnonce {% endblock %}
+
+{% form_theme form 'ad/_collections.html.twig' %}
+
+
+{% block body %}
+    <div class="container">
+        <h1>Modification de votre annnonce</h1>
+
+        {{ form_start(form) }}
+
+            {{ form_widget(form) }}
+
+        <button type="submit" class="btn btn-warning">Modifier</button>
+        {{ form_end(form) }}
+    </div>
+{% endblock %}
+

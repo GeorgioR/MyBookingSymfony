@@ -18,3 +18,6 @@ a:hover{color:orange}
 footer {position: fixed;bottom: 0; width: 100%;}
 
 .datepicker table tr td.disabled, .datepicker table tr td.disabled:hover {color:orange!important; text-decoration: line-through}
+
+blockquote {font-style: oblique; color:grey}
+.rating i{color:orange;}

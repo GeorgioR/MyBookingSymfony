@@ -1,0 +1,56 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Admin login</title>
+        <script src="https://kit.fontawesome.com/b3240efa55.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="/css/bootstrap.min.css">
+        <link rel="stylesheet" href="/css/app.css">
+        <link rel="stylesheet" href="/css/admin.css">
+</head>
+<body>
+
+    <main class="container">
+        <div class="row">
+            <div class="col-md-6 mx-auto">
+                <div class="card bg-light">
+                    <div class="card-header">
+                        <h1 class="text-center">MyBooking</h1>
+                        <h4 class="card-title text-center"><i class="fas fa-lock"></i> Connexion à la partie administration</h4>
+                    </div>
+
+                    <div class="card-body">
+                        {% if hasError %}
+                            <div class="alert alert-warning"> <p>Les informations fournies ne sont pas valides.</p> </div>
+                        {% endif %}
+                        <form method="post">
+                            <div class="form-group">
+                                <label for="">Email</label>
+                                <input type="email" name="_username" id="username" placeholder="Votre email" class="form-control" value="{{username}}">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="password"> Mot de passe</label>
+                                <input type="password" name="_password" placeholder="Votre mot de passe" id="password" class="form-control">
+                            </div>
+
+                            <div class="form-group">
+                                <button type="submit" class="btn btn-primary form-control"> <i class="fas fa-lock-open"></i> Connexion</button>
+                                <a href="{{path('homepage')}}" class="btn btn-link form-control">Retour au site</a>
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+
+    
+</body>
+</html>
+

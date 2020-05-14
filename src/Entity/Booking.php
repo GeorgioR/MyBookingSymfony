@@ -32,14 +32,14 @@ class Booking
 
     /**
      * @ORM\Column(type="datetime")
-     * @Assert\Date(message="Le format doit être une date")
-     * @Assert\GreaterThan("now",message="La date d'arrivée doit être ultérieure que la date d'hier")
+     * 
+     * @Assert\GreaterThan("now",message="La date d'arrivée doit être ultérieure que la date d'hier",groups="front")
      */
     private $startDate;
 
     /**
      * @ORM\Column(type="datetime")
-     * @Assert\Date(message="Le format doit être une date")
+     * 
      * @Assert\GreaterThan(propertyPath="startDate",message="La date de départ ne doit pas être ultérieure que la date d'arriver")
      */
     private $endDate;
@@ -62,6 +62,7 @@ class Booking
 
     /**
      * @ORM\PrePersist
+     * @ORM\PreUpdate
      * @return Response
      */
     public function prePersist(){

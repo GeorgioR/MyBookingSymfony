@@ -55,6 +55,51 @@
                     </a>
                 </div>
 
+
+                <hr>
+
+                {% if ad.comments|length > 0 %}
+
+                    <h3>Commentaires des utilisateurs</h3>
+
+                    <div class="alert alert-warning">
+                        <h4 class="alert-heading h5">
+
+                            <div class="row align-items-center">
+
+                                <div class="col text-capitalize">
+                                
+                                     Note globale : 
+                                </div>
+
+                                <div class="col">
+                            
+                                    {% include 'inc/rating.html.twig' with {'rating': ad.averageRatings } %} <br/>
+                                    <h6 class="h6 text-capitalize">Cette moyenne est calculée sur {{ad.comments | length }} avis.</h6>
+                                
+                                </div>
+                            </div>
+                        </h4>
+                    </div>
+
+                    {% for comment in ad.comments %}
+
+                        <div class="bg-light-rounded">
+                            <p><strong>{{comment.author.fullName}}</strong> a dit : </p>
+                            <blockquote>{{comment.content}}</blockquote>
+                            <p>Note donnée : 
+                                {% include 'inc/rating.html.twig' with {'rating': comment.rating} %}
+                            </p>
+                        </div>
+
+                    {% endfor %}
+
+                {% else %}
+
+                    <h3 class="h6">Cette annonce n'a pas encore de commentaires</h3>
+
+                {% endif %}
+
             </div>
 
             <div class="col">
